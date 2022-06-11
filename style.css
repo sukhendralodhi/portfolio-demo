@@ -1,0 +1,323 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --heading-color:#363636;
+    --para-color:#aaa;
+}
+html{
+    font-size: 100%;
+}
+body{
+    min-width: 100%;
+    min-height: 100%;
+    background-image: url(assets/images/overlay.png), url(assets/images/bg.jpg);
+    background-repeat: repeat, no-repeat;
+    background-size: auto, 100% 100%;
+    background-attachment: fixed;
+    overflow-y: scroll;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.visible{
+    display: block !important;
+}
+
+.flex{
+    display: flex !important;
+}
+.color{
+    color: #ffffff !important;
+}
+/* 
+============
+WRAPPER
+============
+*/
+#wrapper{
+    width: 62%;
+    /* height: 25vh; */
+    /* background-color: red; */
+    padding: 4rem 0;
+    margin: auto;
+}
+@media only screen and (max-width: 980px){
+    #wrapper{
+        width: calc(100% - 10em);
+    }
+}
+@media only screen and (max-width: 600px){
+    #wrapper{
+        width: calc(100% - 2em);
+    }
+}
+
+/* 
+============
+NAV
+============
+*/
+#nav{
+    min-width: 100%;
+    /* background-color: yellow; */
+    height: 5em;
+    text-align: center;
+}
+#nav a{
+    text-decoration: none;
+    color: rgba(240, 236, 236, 0.603);
+    font-size: 2.5rem;
+    margin: 0 1.5rem;
+    transition: color 300ms;
+
+}
+#nav a:hover{
+    color: #ffffff;
+}
+@media only screen and (max-width: 500px){
+    #nav a{
+        font-size: 2rem;
+        margin: 0 1rem;
+    }
+}
+
+
+/* 
+============
+MAIN
+============
+*/
+#main{
+    min-width: 100%;
+    /* background-color: aqua; */
+    /* min-height: 25vh; */
+}
+/* 
+============
+HOME
+============
+*/
+#home{
+    min-width: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    display: none;
+    
+}
+#home header{
+    /* width: 70%; */
+    margin-left: 2.5rem;
+}
+#home header h1{
+    color: var(--heading-color);
+    font-size: 2.5rem;
+    line-height: 1.2em;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+#home header p{
+    color: var(--para-color);
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+#home a{
+    display: block;
+    /* width: 30%; */
+}
+#home a img{
+    width: 350px;
+    height: auto;
+    margin-left: 20px;
+}
+@media only screen and (max-width: 980px){
+    #home{
+        flex-direction: column;
+        padding-bottom: 2rem;
+    }
+    #home header{
+        margin-left: 0;
+        text-align: center;
+        margin: 4rem 0;
+        max-width: 60%;
+        margin-right: 5px;
+    }
+    #home header h {
+        line-height: 1;
+    }
+    #home a{
+        min-width: 100%;
+    }
+    #home a img{
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin: auto;
+    }
+}
+/* 
+============
+WORK
+============
+*/
+#work{
+    min-width: 100%;
+    height: auto;
+    background-color: white;
+    padding: 2.5rem;
+    padding-top: 3.5rem;
+    display: none;
+}
+#work header{
+    margin-bottom: 1.5rem;
+}
+#work header h2{
+    color: var(--heading-color);
+    font-size: 2rem;
+    /* line-height: 2em; */
+    font-weight: 500;
+}
+#work p{
+    color: #777777;
+    font-size: 1.1rem;
+    font-weight: 200;
+    line-height: 1.8em;
+    margin-bottom: 2rem;
+}
+/* SECTION */
+#work section{
+    min-width: 100%;
+    height: fit-content;
+    /* min-height: 30vh; */
+    /* background-color: aqua; */
+    display: grid;
+    /* grid-gap: 2%; */
+    grid-column-gap: 1.5rem;
+    grid-template-columns: repeat(3,1fr);
+}
+#work section img{
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1.5rem;
+}
+@media only screen and (max-width: 980px){
+    #work section{
+        grid-template-columns: repeat(2,1fr);
+    }
+    #work section img{
+        min-width: 100%;
+    }
+}
+@media only screen and (max-width: 480px){
+    #work section{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+/* 
+============
+CONTACT
+============
+*/
+#contact{
+    min-width: 100%;
+    height: auto;
+    background-color: white;
+    padding: 2.5rem;
+    padding-top: 3.5rem;
+    display: none;
+}
+#contact header{
+    margin-bottom: 1.5rem;
+}
+#contact header h2{
+    color: var(--heading-color);
+    font-size: 2rem;
+    /* line-height: 2em; */
+    font-weight: 500;
+}
+#contact input{
+    background-color: #f4f4f4;
+    padding: 15px;
+    border: none;
+    color: #777777;
+    font-size: 1rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+}
+#contact form .inputs{
+    min-width: 100%;
+    /* background-color: pink; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#contact form .inputs input{
+    width: 48.5%;
+}
+#contact textarea{
+    background-color: #f4f4f4;
+    padding: 15px;
+    border: none;
+    color: #777777;
+    font-size: 1rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+}
+#contact form input[value="Send Message"]{
+    background-color: black;
+    color: white;
+    border-radius: 0;
+    padding: 8px 20px;
+    width: 7em;
+    height: 4em;
+    width: fit-content;
+}
+@media only screen and (max-width: 980px){
+    #contact form .inputs{
+        flex-direction: column;
+    }
+    #contact form .inputs input{
+        width: 100%;
+    }
+    
+}
+@media only screen and (max-width: 730px){
+    #contact form input[value="Send Message"]{
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 600px){
+    #contact{
+        padding: 1.25rem;
+        padding-top: 1.75rem;
+    }
+
+}
+/* 
+============
+FOOTER
+============
+*/
+#footer{
+    min-width: 100%;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.45);
+    font-weight: 100;
+    margin: 2rem 0;
+}
+#footer p a{
+    color: rgba(255, 255, 255, 0.45);
+    transition: color 300ms;
+    /* text-decoration: none; */
+}
+#footer p a:hover{
+    color: white;
+}
